@@ -149,7 +149,7 @@ export function SideBar(props: { className?: string }) {
           mkAi
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          新时代智能 Ai，人人都应掌握的！
+          新时代智能 Ai，人人都应掌握！
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <Mkicon />
