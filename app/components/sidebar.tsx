@@ -11,6 +11,7 @@ import CloseIcon from "../icons/close.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
+import Mkicon from "../icons/mkicon.svg";
 
 import Locale from "../locales";
 
@@ -145,27 +146,23 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          ChatGPT Next
+          mkAi
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          新时代智能 Ai，人人都应掌握的！
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
+          <Mkicon />
         </div>
       </div>
 
       <div className={styles["sidebar-header-bar"]}>
         <IconButton
           icon={<MaskIcon />}
-          text={shouldNarrow ? undefined : Locale.Mask.Name}
+          text={shouldNarrow ? undefined : "充值"}
           className={styles["sidebar-bar-button"]}
           onClick={() => {
-            if (config.dontShowMaskSplashScreen !== true) {
-              navigate(Path.NewChat, { state: { fromHome: true } });
-            } else {
-              navigate(Path.Masks, { state: { fromHome: true } });
-            }
+            window.open("https://one.mkzero.top:44301", "_blank");
           }}
           shadow
         />
@@ -206,11 +203,12 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
+          {/* <div className={styles["sidebar-action"]}>
+            充值
+            <a href="https://one.mkzero.top:44301" target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<Mkicon />} shadow />
             </a>
-          </div>
+          </div> */}
         </div>
         <div>
           <IconButton
